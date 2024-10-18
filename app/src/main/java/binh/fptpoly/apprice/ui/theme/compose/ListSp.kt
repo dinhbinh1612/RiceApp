@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import binh.fptpoly.apprice.viewmodel.ProductViewModel
 
 
 @Composable
@@ -21,6 +22,7 @@ fun MonAnList() {
                 .background(color = Color.Gray)
         )
         CustomSearchBar()
+//        ListProduct(productViewModel = ProductViewModel())
 
     }
 }

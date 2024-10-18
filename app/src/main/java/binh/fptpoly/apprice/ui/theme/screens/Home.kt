@@ -77,6 +77,7 @@ fun Home() {
                 // TopNavigationBar sẽ di chuyển cùng SlideShow khi cuộn
                 TopNavigationBar()
 
+
                 // Các nội dung khác có thể thêm vào đây...
             }
         }

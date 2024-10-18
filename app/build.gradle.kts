@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "binh.fptpoly.apprice"
-        minSdk = 34
+        minSdk = 27
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -56,6 +56,14 @@ dependencies {
     implementation ("androidx.compose.ui:ui-tooling-preview:1.2.1")
     implementation ("androidx.navigation:navigation-compose:2.5.3")
     implementation ("androidx.compose.material:material-icons-extended:1.4.0")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("androidx.compose.ui:ui:1.5.0")
+    implementation("io.coil-kt:coil-compose:2.5.0")
+    implementation ("com.squareup.okhttp3:okhttp:3.8.1")
+    implementation ("androidx.core:core:1.6.0")
+
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
