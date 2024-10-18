@@ -19,9 +19,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import binh.fptpoly.apprice.R
+import binh.fptpoly.apprice.viewmodel.ProductViewModel
 
 @Composable
-fun TopNavigationBar() {
+fun TopNavigationBar(productViewModel: ProductViewModel) {
     var selectedTab by remember { mutableStateOf(0) }
     val tabs = listOf("Món ăn", "Đồ ăn thêm", "Topping", "Khác")
     val images = listOf(
@@ -30,6 +31,11 @@ fun TopNavigationBar() {
         R.drawable.dish3,
         R.drawable.dish4
     )
+    val products = productViewModel.products
+    val listMonAn = products.filter { it.category == "Món ăn" }
+    val listDoAnThem = products.filter { it.category == "Đồ ăn thêm" }
+    val listTopping = products.filter { it.category == "Topping" }
+    val listKhac = products.filter { it.category == "Khác" }
 
     Column {
         Row(
@@ -67,16 +73,11 @@ fun TopNavigationBar() {
     }
 
         when (selectedTab) {
-            0 -> MonAnList()
-            1 -> DoAnThemList()
-            2 -> ToppingList()
-            3 -> KhacList()
+            0 -> ListMonAn(productViewModel)
+            1 -> ListDoAnThem(productViewModel)
+            2 -> ListTopping(productViewModel)
+            3 -> ListKhac(productViewModel)
         }
     }
 }
 
-@Preview
-@Composable
-fun PreviewTopNavigationBar() {
-    TopNavigationBar()
-}

@@ -42,7 +42,7 @@ import binh.fptpoly.apprice.R
 @Composable
 fun Profile() {
     val scrollState = rememberScrollState()
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.fillMaxSize().padding(bottom = 100.dp)) {
         Column(
             modifier = Modifier
                 .background(color = Color(0xFF74B9FF))

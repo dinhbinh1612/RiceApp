@@ -11,8 +11,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -26,11 +24,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import binh.fptpoly.apprice.R
 import binh.fptpoly.apprice.ui.theme.compose.TopNavigationBar
+import binh.fptpoly.apprice.viewmodel.ProductViewModel
 
 @Composable
 fun Home() {
     val selectedCategory = remember { mutableStateOf("Món ăn") }
-    val scrollState = rememberScrollState()
 
     Box(
         modifier = Modifier
@@ -63,24 +61,24 @@ fun Home() {
             )
 
             // Phần cuộn trang sẽ bắt đầu từ đây
-            Column(modifier = Modifier.verticalScroll(scrollState)) {
-                // SlideShow sẽ cuộn khi scroll
-                CustomSlideshow()
-
-                Spacer(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(3.dp)
-                        .background(color = Color(0xFF666666))
-                )
-
-                // TopNavigationBar sẽ di chuyển cùng SlideShow khi cuộn
-                TopNavigationBar()
 
 
-                // Các nội dung khác có thể thêm vào đây...
-            }
+            // SlideShow sẽ cuộn khi scroll
+            CustomSlideshow()
+
+            Spacer(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(3.dp)
+                    .background(color = Color(0xFF666666))
+            )
+
+
+            TopNavigationBar(productViewModel = ProductViewModel())
+
+
         }
     }
 }
+
 

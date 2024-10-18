@@ -1,5 +1,6 @@
 package binh.fptpoly.apprice.navigation
 
+import BottomNavigationBar
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -14,7 +15,7 @@ import binh.fptpoly.apprice.ui.theme.screens.Welcome
 fun AppNavigation() {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "welcome") {
+    NavHost(navController = navController, startDestination = "main") {
         composable("welcome") {
             Welcome(navController)
         }
@@ -27,8 +28,8 @@ fun AppNavigation() {
         composable("signUp") {
             SignUp(navController)
         }
-        composable("home"){
-            Home()
+        composable("main"){
+           BottomNavigationBar(navController)
         }
     }
 }
